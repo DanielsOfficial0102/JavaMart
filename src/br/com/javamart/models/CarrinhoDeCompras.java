@@ -40,7 +40,6 @@ public class CarrinhoDeCompras {
             System.out.println("Erro! Estoque insuficiente!");
             return;
         }
-
         total += produto.getPreco(); // Aumenta o total
         produto.diminuirQuantidade(quantidade); // Diminui a quantidade no estoque
         produto.aumentarQuantidadeCarrinho(quantidade); // Aumenta a quantidade no Carrinho
@@ -69,7 +68,13 @@ public class CarrinhoDeCompras {
         System.out.println("Total: R$ " + total);
     }
 
-    public void finalizarCompra(Pessoa cliente) {
-
+    public void finalizarCompra(Cliente cliente) {
+        if (total > cliente.getSaldo()) {
+            System.out.println("Erro! Você não tem saldo suficiente!");
+            return;
+        }
+        Compra compra = new Compra(itensNoCarrinho, cliente);
+        cliente.removeSaldo(total);
+        System.out.println("Compra efetuada com sucesso!");
     }
 }

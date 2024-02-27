@@ -7,6 +7,7 @@ import java.util.List;
 public abstract class Controle {
     private static List<Cliente> listaClientes = new ArrayList<>();
     private static List<Produto> listaProdutos = new ArrayList<>();
+    private static List<Compra> historicoVendas = new ArrayList<>();
 
     public static Cliente cadastrarCliente(String nome, String endereco, String telefone, String email, LocalDate dataNascimento, String senha) {
         Cliente cliente = new Cliente(nome, endereco, telefone, email, dataNascimento, senha);
@@ -51,5 +52,21 @@ public abstract class Controle {
             }
         }
         return null;
+    }
+
+    public static void adicionarAoHistoricoDeVendas(Compra compra) {
+        historicoVendas.add(compra);
+    }
+
+    public static void verHistoricoDeCompras() {
+        if (historicoVendas.isEmpty()) {
+            System.out.println("Nenhuma compra foi encontrada.");
+            return;
+        }
+
+        for (Compra compra : historicoVendas) {
+            System.out.println(compra);
+        }
+
     }
 }

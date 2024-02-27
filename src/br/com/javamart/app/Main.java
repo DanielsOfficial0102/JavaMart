@@ -5,13 +5,15 @@ import br.com.javamart.models.Controle;
 import br.com.javamart.models.Produto;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         CarrinhoDeCompras carrinhoDeCompras = new CarrinhoDeCompras();
 
         Controle.cadastrarCliente("José",
-                "Rua Itamonte, 365", "+5511997280552",
+                "Rua abc, 123", "+5511997280552",
                 "joseamaral@gmail.com", LocalDate.of(1980, 12, 13),
                 "senha123");
 
