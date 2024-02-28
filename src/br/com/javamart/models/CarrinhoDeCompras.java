@@ -44,6 +44,7 @@ public class CarrinhoDeCompras implements CarrinhoDeComprasInterface {
         produto.diminuirQuantidade(quantidade); // Diminui a quantidade no estoque
         produto.aumentarQuantidadeCarrinho(quantidade); // Aumenta a quantidade no Carrinho
         itensNoCarrinho.add(produto); // Adiciona o item a lista carrinho
+        System.out.println("Produto adicionado ao carrinho!");
     }
 
     public void removerDoCarrinho(Produto produto) {
@@ -55,6 +56,7 @@ public class CarrinhoDeCompras implements CarrinhoDeComprasInterface {
         produto.aumentarQuantidade(produto.getQuantidadeNoCarrinho());
         produto.diminuirQuantidadeCarrinho(produto.getQuantidade());
         itensNoCarrinho.remove(produto);
+        System.out.println("Produto removido do carrinho!");
     }
 
     public void verCarrinho() {
@@ -74,7 +76,10 @@ public class CarrinhoDeCompras implements CarrinhoDeComprasInterface {
             return;
         }
         Compra compra = new Compra(itensNoCarrinho, cliente);
+        Controle.getHistoricoVendas().add(compra);
         cliente.removeSaldo(total);
+        itensNoCarrinho.clear();
+        total = 0;
         System.out.println("Compra efetuada com sucesso!");
     }
 }

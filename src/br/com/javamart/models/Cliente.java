@@ -10,9 +10,9 @@ public class Cliente extends Pessoa implements ClienteInterface {
     }
 
     public void addSaldo(double saldo) {
-        saldo += saldo;
+        this.saldo += saldo;
     }
-    public void removeSaldo(double saldo) { saldo -= saldo; }
+    public void removeSaldo(double saldo) { this.saldo -= saldo; }
     public double getSaldo() {
         return this.saldo;
     }

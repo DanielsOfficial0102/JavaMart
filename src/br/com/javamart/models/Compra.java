@@ -8,30 +8,17 @@ public class Compra implements CompraInterface {
     private Cliente cliente;
 
     public Compra(List<Produto> itensCompra, Cliente cliente) {
-        this.itensCompra = itensCompra;
+        this.itensCompra.addAll(itensCompra);
         this.cliente = cliente;
     }
 
-    public List<Produto> getItensCompra() {
-        return itensCompra;
-    }
-
-    public String listarProdutos() {
-        for (Produto item : itensCompra) {
+    public void listarProdutos() {
+        for (Produto item : this.itensCompra) {
             System.out.println(item);
         }
-        return null;
     }
 
     public Cliente getCliente() {
         return cliente;
-    }
-
-    @Override
-    public String toString() {
-        return "===== VENDA =====" +
-                "Cliente: " + cliente.getNome() +
-                "\nVendido: " + listarProdutos() +
-                "===== FIM =====";
     }
 }

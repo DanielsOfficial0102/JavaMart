@@ -15,37 +15,22 @@ public class Produto implements ProdutoInterface {
     public double getPreco() {
         return preco;
     }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
-
     public String getNome() {
         return nome;
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public int getQuantidade() {
         return quantidade;
     }
-
     public void diminuirQuantidade(double quantidade) {
         this.quantidade -= quantidade;
     }
-
     public void aumentarQuantidade(double quantidade) {
         this.quantidade += quantidade;
     }
-
     public int getQuantidadeNoCarrinho() { return quantidadeNoCarrinho; }
-
     public void diminuirQuantidadeCarrinho(double quantidade) {
         this.quantidadeNoCarrinho -= quantidade;
     }
-
     public void aumentarQuantidadeCarrinho(double quantidade) {
         this.quantidadeNoCarrinho += quantidade;
     }
@@ -55,7 +40,7 @@ public class Produto implements ProdutoInterface {
         return "=====" +
                 "\nNome: " + nome +
                 "\nPreço: " + preco +
-                "\nQuantidade Estoque: " + quantidade +
-                "\nQuantidade no Carrinho: " + quantidadeNoCarrinho;
+                "\nQuantidade no Carrinho: " + quantidadeNoCarrinho +
+                "\nQuantidade no Estoque Atualmente: " + quantidade;
     }
 }

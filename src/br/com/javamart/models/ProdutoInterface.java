@@ -2,9 +2,7 @@ package br.com.javamart.models;
 
 public interface ProdutoInterface {
     double getPreco();
-    void setPreco(double preco);
     String getNome();
-    void setNome(String nome);
     int getQuantidade();
     void diminuirQuantidade(double quantidade);
     void aumentarQuantidade(double quantidade);

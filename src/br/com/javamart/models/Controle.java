@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Controle implements ControleInterface {
-    private static List<Cliente> listaClientes = new ArrayList<>();
+    private static List<Pessoa> listaClientes = new ArrayList<>();
     private static List<Produto> listaProdutos = new ArrayList<>();
     private static List<Compra> historicoVendas = new ArrayList<>();
 
@@ -42,8 +42,13 @@ public abstract class Controle implements ControleInterface {
         }
     }
 
-    public static List<Produto> getListaProdutos() {
-        return listaProdutos;
+    public static Pessoa logar(String nome, String senha) {
+        for (Pessoa cliente : listaClientes) {
+            if (cliente.getNome().equalsIgnoreCase(nome)) {
+                return cliente;
+            }
+        }
+        return null;
     }
 
     public static Produto buscarProduto(String nome) {
@@ -55,19 +60,22 @@ public abstract class Controle implements ControleInterface {
         return null;
     }
 
-    public static void adicionarAoHistoricoDeVendas(Compra compra) {
-        historicoVendas.add(compra);
-    }
-
-    public static void verHistoricoDeCompras() {
+    public static void verHistoricoDeVendas() {
         if (historicoVendas.isEmpty()) {
             System.out.println("Nenhuma compra foi encontrada.");
             return;
         }
 
         for (Compra compra : historicoVendas) {
-            System.out.println(compra);
+            System.out.println("===== VENDA =====");
+            System.out.println("Cliente: " + compra.getCliente());
+            System.out.println("Produtos comprados: ");
+            compra.listarProdutos();
+            System.out.println("===== FIM =====");
         }
+    }
 
+    public static List<Compra> getHistoricoVendas() {
+        return historicoVendas;
     }
 }

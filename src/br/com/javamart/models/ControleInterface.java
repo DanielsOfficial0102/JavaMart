@@ -14,9 +14,6 @@ public interface ControleInterface {
     }
     static void visualizarProdutos() {
     }
-    static List<Produto> getListaProdutos() {
-        return null;
-    }
     static void adicionarAoHistoricoDeVendas(Compra compra) {
     }
     static void verHistoricoDeCompras() {
