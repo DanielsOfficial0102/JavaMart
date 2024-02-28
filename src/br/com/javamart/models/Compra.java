@@ -3,7 +3,7 @@ package br.com.javamart.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Compra {
+public class Compra implements CompraInterface {
     private List<Produto> itensCompra = new ArrayList<>();
     private Cliente cliente;
 

@@ -1,7 +1,7 @@
 package br.com.javamart.models;
 
 import java.time.LocalDate;
-public class Cliente extends Pessoa {
+public class Cliente extends Pessoa implements ClienteInterface {
     private double saldo;
 
     public Cliente(String nome, String endereco, String telefone, String email, LocalDate dataNascimento, String senha) {
@@ -15,5 +15,10 @@ public class Cliente extends Pessoa {
     public void removeSaldo(double saldo) { saldo -= saldo; }
     public double getSaldo() {
         return this.saldo;
+    }
+
+    @Override
+    public String toString() {
+        return getNome();
     }
 }

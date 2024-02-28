@@ -1,6 +1,6 @@
 package br.com.javamart.models;
 
-public class Produto {
+public class Produto implements ProdutoInterface {
     private String nome;
     private double preco;
     private int quantidade;

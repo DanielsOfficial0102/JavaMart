@@ -3,7 +3,7 @@ package br.com.javamart.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarrinhoDeCompras {
+public class CarrinhoDeCompras implements CarrinhoDeComprasInterface {
     private List<Produto> itensNoCarrinho = new ArrayList<>();
     private double total;
 

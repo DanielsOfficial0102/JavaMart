@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Controle {
+public abstract class Controle implements ControleInterface {
     private static List<Cliente> listaClientes = new ArrayList<>();
     private static List<Produto> listaProdutos = new ArrayList<>();
     private static List<Compra> historicoVendas = new ArrayList<>();
@@ -31,6 +31,7 @@ public abstract class Controle {
             System.out.println(cliente);
         }
     }
+
     public static void visualizarProdutos() {
         if (listaProdutos.isEmpty()) {
             System.out.println("Nenhum produto encontrado.");
